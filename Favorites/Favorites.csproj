@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Favorites.Domain\Favorites.Domain.csproj" />
     <ProjectReference Include="..\Favorites.Infrastructure\Favorites.Infrastructure.csproj" />
   </ItemGroup>
 
