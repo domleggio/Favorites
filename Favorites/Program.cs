@@ -22,7 +22,7 @@ using (var scope = app.Services.CreateScope())
     var dbContext = scope.ServiceProvider.GetRequiredService<FavoritesDbContext>();
     if (!dbContext.Database.CanConnect())
     {
-        throw new NotImplementedException("Cannot connect to database");
+        throw new NotImplementedException("Cannot connect to database1");
     }
 }
 
