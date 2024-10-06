@@ -80,6 +80,9 @@ namespace Favorites.Infrastructure.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("FavoriteId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -114,6 +117,8 @@ namespace Favorites.Infrastructure.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FavoriteId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -268,6 +273,15 @@ namespace Favorites.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Favorites.Domain.User", b =>
+                {
+                    b.HasOne("Favorites.Domain.Favorite", "Favorite")
+                        .WithMany()
+                        .HasForeignKey("FavoriteId");
+
+                    b.Navigation("Favorite");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

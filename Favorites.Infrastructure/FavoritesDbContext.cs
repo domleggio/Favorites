@@ -13,5 +13,9 @@ public class FavoritesDbContext : IdentityDbContext<User>, IFavoritesDbContext
     public virtual DbSet<Favorite> Favorite { get; set; }
     public virtual DbSet<Category> Category { get; set; }
 
+    public async Task<int> SaveChangesAsync()
+    {
+        return await base.SaveChangesAsync();
+    }
 
 }

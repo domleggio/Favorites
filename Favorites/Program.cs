@@ -1,6 +1,8 @@
 using Favorites.Application.Services;
 using Favorites.Domain;
 using Favorites.Infrastructure;
+using Favorites.Infrastructure.Repositories;
+using Favorites.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
     
@@ -27,6 +29,8 @@ builder.Services.AddDbContext<FavoritesDbContext>(options =>
 });
 
 builder.Services.AddTransient<IFavoritesService, FavoritesService>();
+builder.Services.AddTransient<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddTransient<IFavoritesDbContext, FavoritesDbContext>();
 
 var app = builder.Build();

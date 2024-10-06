@@ -1,12 +1,7 @@
 ﻿namespace Favorites.Domain;
 
-public class Category
+public class Category(string name)
 {
     public int Id { get; set; }
-    public required string Name { get; set; }
-
-    public Category(string name)
-    {
-        Name = name;
-    }
+    public string Name { get; init; } = name;
 }
