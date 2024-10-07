@@ -25,7 +25,7 @@ builder.Services.AddIdentityCore<User>()
 
 builder.Services.AddDbContext<FavoritesDbContext>(options =>
 {
-    options.UseSqlServer("Server=DESKTOP-6C9AD2N; Database=favorites-dev-db; Trusted_Connection=true; Trust Server Certificate=true; MultipleActiveResultSets=true; Integrated Security=true;");
+    options.UseSqlServer("YOUR_SERVER_NAME; Database=favorites-dev-db; Trusted_Connection=true; Trust Server Certificate=true; MultipleActiveResultSets=true; Integrated Security=true;");
 });
 
 builder.Services.AddTransient<IFavoritesService, FavoritesService>();
