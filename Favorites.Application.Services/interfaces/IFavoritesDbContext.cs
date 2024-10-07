@@ -1,7 +1,7 @@
 ﻿using Favorites.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Favorites.Application.Services;
+namespace Favorites.Application.Services.interfaces;
 
 public interface IFavoritesDbContext
 {

@@ -1,5 +1,5 @@
-﻿using Favorites.Application.Services;
-using Favorites.Application.Services.dto;
+﻿using Favorites.Application.Services.dto;
+using Favorites.Application.Services.interfaces;
 using Favorites.Domain;
 using Microsoft.AspNetCore.Mvc;
 

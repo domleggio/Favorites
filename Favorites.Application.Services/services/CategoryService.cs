@@ -1,10 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
 using Favorites.Application.Services.dto;
+using Favorites.Application.Services.interfaces;
 using Favorites.Domain;
-using Favorites.Services;
-namespace Favorites.Application.Services;
+namespace Favorites.Application.Services.services;
 
-public class CategoryService (ICategoryRepository categoryRepository) : ICategoryService
+public class CategoryService(ICategoryRepository categoryRepository) : ICategoryService
 {
     public async Task<Result> AddCategoryAsync(CategoryDto dto)
     {

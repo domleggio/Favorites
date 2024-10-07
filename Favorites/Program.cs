@@ -1,11 +1,11 @@
-using Favorites.Application.Services;
+using Favorites.Application.Services.interfaces;
+using Favorites.Application.Services.services;
 using Favorites.Domain;
 using Favorites.Infrastructure;
 using Favorites.Infrastructure.Repositories;
-using Favorites.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-    
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -25,7 +25,7 @@ builder.Services.AddIdentityCore<User>()
 
 builder.Services.AddDbContext<FavoritesDbContext>(options =>
 {
-    options.UseSqlServer("YOUR_SERVER_NAME; Database=favorites-dev-db; Trusted_Connection=true; Trust Server Certificate=true; MultipleActiveResultSets=true; Integrated Security=true;");
+    options.UseSqlServer("Server=DESKTOP-6C9AD2N; Database=favorites-dev-db; Trusted_Connection=true; Trust Server Certificate=true; MultipleActiveResultSets=true; Integrated Security=true;");
 });
 
 builder.Services.AddTransient<IFavoritesService, FavoritesService>();

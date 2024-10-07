@@ -1,6 +1,6 @@
 ﻿using Favorites.Domain;
 
-namespace Favorites.Services;
+namespace Favorites.Application.Services.interfaces;
 
 public interface ICategoryRepository
 {

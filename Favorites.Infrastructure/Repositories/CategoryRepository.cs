@@ -1,6 +1,5 @@
-﻿using Favorites.Application.Services;
+﻿using Favorites.Application.Services.interfaces;
 using Favorites.Domain;
-using Favorites.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Favorites.Infrastructure.Repositories;
